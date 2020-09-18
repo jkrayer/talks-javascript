@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Scope
+
+    // the global
+    // Everything declared here becomes window[x]
+    var a = 1; // window.a === 1
+
+    function myFunc() {} // window.myFunc is a function
+
+
+    // A classic scope example
+    var i = 0;
+    for (i; i < 5; i++) {
+      // do stuff
+    }
+
+    for (i; i < 5; i++) {
+      console.log('i ran')
+    }
+
+    console.log(i); // or did I?
+
+
+    // Functions are the primary way to create scopes
+    function myFunc (a) {
+      x = 2; // var, let, const
+      console.log(a, x);
+    }
+
+    myFunc('the value of x is:'); // 2
+
+    console.log(x); // 2, WTF!
+
+    // local environment
+    function sum(x, y) {
+      var z = 5;
+      return x + y;
+    }
+    console.log(sum(5, 10));
+    console.log(z); // throws
+
+    // A function can access its ancestor scope
+    var x = 6;
+    function sum(y) {
+      return x + y;
+    }
+    console.log(sum(10)); // 16
+
+    // this is true as far as you care to go
+    function sum() {
+      var y = 7;
+      return function () {
+        return x + y;
+      }
+    }
+    console.log(sum()()); // 17
+
+    // Other scope rules
+    for (...) {
+      // block
+    }
+
+    if (...) {
+      // block
+    }
+
+    while (...) {
+      // block
+    }
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

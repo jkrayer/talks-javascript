@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Variable Declaration
+
+    // accessible via `a` and window.a;
+    var a = 1;
+
+    // accessible via `b` and window.b;
+    b = 2;
+
+    // This is actually two steps. First variable declaration then value assignment
+    var c = 3;
+
+    // Undeclared, throws an error
+    d;
+
+    // undefined, wtf?
+    typeof d;
+
+    // undefined, the default value when no value is assigned
+    var e;
+    let f;
+
+    // var can be redeclared and values reassigned
+    var g = 1;
+    var g = 2;
+    g = 3;
+
+    // let can have values reassigned but they can not be redeclared
+    let h = 1;
+    let h = 2; // Throws
+    h = 3;
+
+    // const cant be re-declared or re-assigned
+    const i = 1;
+    const i = 2; // throws
+    i = 3; // throws
+
+    // const can be mutated!
+    const j = [];
+    j.push(1);
+    const k = {};
+    k.a = 1;
+
+  </script>
+</body>
+</html>

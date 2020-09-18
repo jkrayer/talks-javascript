@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    // Classic
+    // turn this
+    function add (x, y) {
+      return x + y;
+    }
+    // into this
+    function add (x) {
+      return function(y) {
+        return x + y;
+      };
+    }
+
+    // by writing a utility
+    // partial(function, ..arguments);
+
+    const add10 = partial(add, 10);
+    add10(5);
+    add10(6);
+
+    // But this example never convinced anyone
+    // Let's look at map, a niave implementation
+    function map(arr, fn) {
+      let result = [];
+
+      for (let i = 0, i < arr.length; i++) {
+        result.push(fn(arr[i]));
+      }
+
+      return result;
+    }
+
+    // function signature
+    function map(fn, arr) { ... }
+
+  </script>
+</body>
+</html>
