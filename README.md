@@ -1,4 +1,4 @@
-# Scope
+# Talks Javascript
 
 If any content herein is incomplete, incorrect or splled portly please submit a PR and fix me up.
 
